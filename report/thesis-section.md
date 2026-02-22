@@ -204,6 +204,14 @@ The most significant finding is not any individual vulnerability but the pattern
 
 These findings are not unique to the Gmail MCP Server — they reflect systemic patterns likely present across the rapidly growing MCP ecosystem. As LLMs increasingly operate as autonomous agents with real-world tool access, the security of MCP server implementations becomes a critical concern. The vulnerability taxonomy and findings presented here provide a foundation for systematic security assessment of MCP servers and inform the design of protocol-level mitigations.
 
+## 7. Responsible Disclosure
+
+In accordance with coordinated vulnerability disclosure principles, the critical finding (F01: OAuth Callback Domain Takeover) and supporting findings were reported to the project author (GongRzhe) via email on 22 February 2026.
+
+The disclosure communication was signed with the researcher's GPG key (fingerprint: `DFF1 28A5 AAF2 75E0 635E 0184 800D 8EAD 078D 6309`) and included a description of the vulnerability, the affected documentation and code component (`README.md:147`, `src/index.ts:126-128`), the impact assessment, and recommended remediation steps. The author was advised to remove the `gmail.gongrzhe.com` callback URL from documentation immediately, register or formally decommission the domain, and validate callback URLs against an allowlist in code.
+
+No further public disclosure of F01 specifics will be made until the author has had a reasonable opportunity to respond and issue a patch, in line with standard responsible disclosure timelines.
+
 ---
 
 **Word count:** ~3,800
